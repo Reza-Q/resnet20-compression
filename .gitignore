@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# Experiment outputs (large binaries; regenerate by re-running the pipeline)
+filter_pruning_experiment/
+data/
+*.pth
+*.pt
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Test / tooling caches
+.pytest_cache/
+.ruff_cache/
+htmlcov/
+.coverage

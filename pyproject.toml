@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "resnet-compression"
+version = "1.0.0"
+description = "Iterative filter pruning, ensemble knowledge distillation and INT8/INT4 quantization-aware training for ResNet20 on CIFAR-100."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Your Name" }]
+keywords = ["pytorch", "pruning", "knowledge-distillation", "quantization", "resnet", "cifar100", "model-compression"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "torch>=2.1",
+  "torchvision>=0.16",
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "matplotlib>=3.7",
+  "tqdm>=4.65",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "ruff>=0.4"]
+
+[project.urls]
+Homepage = "https://github.com/<your-username>/<your-repo>"
+Issues = "https://github.com/<your-username>/<your-repo>/issues"
+
+[project.scripts]
+resnet-compress = "resnet_compression.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["resnet_compression*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = [
+  "ignore:torch.ao.quantization is deprecated.*:DeprecationWarning",
+  "ignore:Please use quant_min and quant_max.*:UserWarning",
+  "ignore:torch.quantize_per_tensor.*:UserWarning",
+]
+
+[tool.ruff]
+line-length = 110
+target-version = "py39"

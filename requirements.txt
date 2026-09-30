@@ -1,0 +1,13 @@
+# Core dependencies.
+#
+# NOTE on torch/torchvision: the plain `pip install torch` below pulls the CUDA build,
+# which drags in several GB of NVIDIA wheels even on a CPU-only machine. If you don't
+# need GPU support, or need a specific CUDA version, use the selector at
+# https://pytorch.org/get-started/locally/ to get the right command for your platform
+# instead of installing from this file directly.
+torch>=2.1
+torchvision>=0.16
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.7
+tqdm>=4.65
